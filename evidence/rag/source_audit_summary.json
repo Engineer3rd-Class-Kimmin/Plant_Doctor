@@ -1,0 +1,71 @@
+{
+  "rag_path": "E:\\EyeGuideRAG\\plant_er_bootstrap\\runs\\bulk_rag_factory_nongsaro_v2_ncpms_strict_v6_5_provenance_patched\\rag_chunks.jsonl",
+  "index_manifest_path": "E:\\EyeGuideRAG\\plant_er_bootstrap\\runs\\bulk_rag_factory_nongsaro_v2_ncpms_strict_v6_5_provenance_patched\\rag_embedding_index\\index_manifest.json",
+  "total_chunks": 38697,
+  "vector_count": 38697,
+  "vector_count_matches_chunks": true,
+  "embedding_model": "intfloat/multilingual-e5-base",
+  "embedding_dimension": 768,
+  "missing_counts": {
+    "source": 0,
+    "source_service": 0,
+    "source_file": 0,
+    "source_url": 352,
+    "chunk_id": 0,
+    "text": 0,
+    "content_hash": 0,
+    "all_trace_information": 0
+  },
+  "duplicate_counts": {
+    "duplicate_chunk_ids": 0,
+    "duplicate_content_hashes": 0
+  },
+  "metadata_mismatch_count": 0,
+  "source_counts": {
+    "농촌진흥청 농업기술 데이터 플랫폼": 30998,
+    "농촌진흥청 농사로": 6723,
+    "농촌진흥청 한국식물병명목록": 509,
+    "Plant Doctor 초기 문헌 근거 코퍼스": 352,
+    "농촌진흥청 국가농작물병해충관리시스템": 115
+  },
+  "service_counts": {
+    "adp_pesticide_registration": 30131,
+    "month": 2373,
+    "pest": 1916,
+    "organic": 1282,
+    "adp_pest_monitoring": 772,
+    "disaster": 762,
+    "korean_plant_disease_catalog": 509,
+    "legacy_literature_evidence": 352,
+    "monthFarmTech": 191,
+    "farm": 151,
+    "ncpms_manual": 115,
+    "adp_fertilizer_standard": 95,
+    "crop_ebook": 48
+  },
+  "source_type_counts": {
+    "official_download": 30998,
+    "nongsaro_downloaded_full": 6532,
+    "strict_dictionary": 509,
+    "legacy_literature_import": 352,
+    "nongsaro_openapi": 191,
+    "ncpms_manual_collection": 115
+  },
+  "evidence_scope_counts": {
+    "regulatory_registration": 30131,
+    "general_agriculture": 6132,
+    "monitoring_reference": 772,
+    "disease_specific": 706,
+    "strict_dictionary": 509,
+    "[누락]": 352,
+    "fertilizer_standard": 95
+  },
+  "purpose_counts": {
+    "registered_pesticide_guidance": 30131,
+    "[누락]": 7190,
+    "pest_monitoring_reference": 772,
+    "taxonomy_standardization": 509,
+    "fertilizer_standard_guidance": 95
+  },
+  "strict_pass": true
+}

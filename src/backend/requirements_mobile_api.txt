@@ -1,0 +1,11 @@
+fastapi
+uvicorn[standard]
+python-multipart
+numpy
+pillow
+pillow-heif>=1.5.0
+torch
+torchvision
+transformers
+openai>=1.0.0
+python-dotenv>=1.0.0

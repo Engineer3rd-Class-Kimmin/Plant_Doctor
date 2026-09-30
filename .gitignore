@@ -1,0 +1,50 @@
+# Secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Flutter / Android
+.dart_tool/
+.flutter-plugins*
+.packages
+build/
+android/.gradle/
+android/local.properties
+*.apk
+*.aab
+
+# Models and datasets
+data/
+datasets/
+models/
+checkpoints/
+*.pt
+*.pth
+*.safetensors
+*.onnx
+*.npy
+*.npz
+*.bin
+
+# Generated RAG payloads
+metadata.jsonl
+chunks.jsonl
+documents.jsonl
+
+# Logs and OS files
+*.log
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.iml

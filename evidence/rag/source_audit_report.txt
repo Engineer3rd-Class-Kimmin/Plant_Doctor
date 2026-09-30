@@ -1,0 +1,55 @@
+RAG 출처 감사 결과
+============================================================
+RAG: E:\EyeGuideRAG\plant_er_bootstrap\runs\bulk_rag_factory_nongsaro_v2_ncpms_strict_v6_5_provenance_patched\rag_chunks.jsonl
+전체 청크: 38,697
+벡터 수: 38697
+청크·벡터 일치: True
+임베딩 모델: intfloat/multilingual-e5-base
+임베딩 차원: 768
+
+[누락]
+source 누락: 0
+source_service 누락: 0
+source_file 누락: 0
+source_url 누락: 352
+chunk_id 누락: 0
+text/content 누락: 0
+content hash 누락: 0
+출처 추적정보 전체 누락: 0
+
+[중복·불일치]
+중복 chunk_id: 0
+중복 content hash: 0
+상위 필드와 metadata 불일치: 0
+
+엄격 감사 통과: True
+
+[출처 서비스별 청크 수]
+  30,131  adp_pesticide_registration
+   2,373  month
+   1,916  pest
+   1,282  organic
+     772  adp_pest_monitoring
+     762  disaster
+     509  korean_plant_disease_catalog
+     352  legacy_literature_evidence
+     191  monthFarmTech
+     151  farm
+     115  ncpms_manual
+      95  adp_fertilizer_standard
+      48  crop_ebook
+
+[서비스별 출처 파일·URL 보유율]
+adp_pesticide_registration: file=100.0%, url=100.0%, id=100.0%, hash=100.0%
+month: file=100.0%, url=100.0%, id=100.0%, hash=100.0%
+pest: file=100.0%, url=100.0%, id=100.0%, hash=100.0%
+organic: file=100.0%, url=100.0%, id=100.0%, hash=100.0%
+adp_pest_monitoring: file=100.0%, url=100.0%, id=100.0%, hash=100.0%
+disaster: file=100.0%, url=100.0%, id=100.0%, hash=100.0%
+korean_plant_disease_catalog: file=100.0%, url=100.0%, id=100.0%, hash=100.0%
+legacy_literature_evidence: file=100.0%, url=0.0%, id=100.0%, hash=100.0%
+monthFarmTech: file=100.0%, url=100.0%, id=100.0%, hash=100.0%
+farm: file=100.0%, url=100.0%, id=100.0%, hash=100.0%
+ncpms_manual: file=100.0%, url=100.0%, id=100.0%, hash=100.0%
+adp_fertilizer_standard: file=100.0%, url=100.0%, id=100.0%, hash=100.0%
+crop_ebook: file=100.0%, url=100.0%, id=100.0%, hash=100.0%

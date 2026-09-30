@@ -1,0 +1,8 @@
+{
+  "best_epoch": 21,
+  "best_score": 0.8242220074539939,
+  "classes": 62,
+  "train_images": 4578,
+  "val_images": 1117,
+  "output_dir": "E:\\EyeGuideRAG\\plant_er_bootstrap\\runs\\lesion_classifier_convnext_small_24crops_v1"
+}
