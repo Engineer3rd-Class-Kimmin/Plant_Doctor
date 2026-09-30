@@ -34,14 +34,27 @@ vector RAG ready vectors=38697 dim=768 normalized=True
 Application startup complete
 ```
 
-### Windows 실행
+### 일반 실행 준비
+
+```powershell
+git clone https://github.com/Engineer3rd-Class-Kimmin/Plant_Doctor.git
+cd Plant_Doctor\src\backend
+python -m venv .venv
+.\.venv\Scripts\python.exe -m pip install -r requirements.txt
+Copy-Item .env.example .env
+.\.venv\Scripts\python.exe -m uvicorn app:app --host 0.0.0.0 --port 8001
+```
+
+`.env`에는 SegFormer, ConvNeXt, RAG 인덱스의 실제 경로와 필요한 API 키를 설정해야 합니다. 가중치와 벡터 본체는 이 공개 저장소에 포함되지 않으므로 별도 산출물 없이는 전체 추론 서버가 준비 상태에 도달하지 않습니다. 가상환경을 활성화하지 않고 Python 실행 파일을 직접 호출하면 PowerShell ExecutionPolicy 문제를 피할 수 있습니다.
+
+### 원 개발 환경에서 사용한 실행 명령
 
 ```powershell
 cd E:\plantdoctor\plant_doctor_live_segmentation\server
 E:\EyeGuideRAG\.venv\Scripts\python.exe -m uvicorn app:app --host 0.0.0.0 --port 8001
 ```
 
-가상환경을 활성화하지 않고 Python 실행 파일을 직접 호출하면 PowerShell ExecutionPolicy 문제를 피할 수 있습니다.
+이 절대 경로는 개발 당시 실행 기록이며 다른 PC의 설치 방법이 아닙니다.
 
 ### 상태 확인
 

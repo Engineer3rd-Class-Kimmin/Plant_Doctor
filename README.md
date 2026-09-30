@@ -1,8 +1,26 @@
 # 잎파라치 — AI 식물 질병 진단 시스템
 
-> 잎의 병변을 찾고, 질병 후보를 분류한 뒤, 공공 농업 자료를 근거로 설명하는 모바일 식물 진단 시스템
+> 컴퓨터 비전 기반 식물 질병 진단부터 RAG 기반 설명 생성, FastAPI 추론 서버, Flutter 모바일 앱까지 직접 구축한 End-to-End AI 서비스 프로젝트
 
 이 저장소는 데이터 조사부터 모델 학습, RAG 구축, FastAPI 서버, Flutter 앱까지 **혼자 설계하고 구현한 개인 프로젝트**를 포트폴리오 형태로 정리한 것입니다. 발표자료의 역할 분담 표는 초기 공모 문서의 형식이며, 이 저장소에 정리한 개발 작업은 모두 개인 수행 내용입니다.
+
+## 시연 영상
+
+[▶ 약 61초 전체 시연영상 보기 (MP4, 28.3MB)](assets/demo/plant-doctor-demo.mp4)
+
+| 앱 실행 | 실시간 촬영 | AI 분석 | 근거 기반 결과 |
+|---|---|---|---|
+| <img src="assets/demo/demo-04s.jpg" width="190" alt="앱 홈 화면"> | <img src="assets/demo/demo-16s.jpg" width="190" alt="실시간 식물 촬영 화면"> | <img src="assets/demo/demo-28s.jpg" width="190" alt="분할 및 분류 분석 화면"> | <img src="assets/demo/demo-40s.jpg" width="190" alt="근거 기반 진단 결과 화면"> |
+
+## 기술 스택
+
+| 영역 | 기술 |
+|---|---|
+| AI / Vision | Python · PyTorch · SegFormer-B3 · ConvNeXt-Small · Transformers |
+| RAG / LLM | multilingual-e5-base · BGE Reranker · OpenAI API · NumPy Vector Search |
+| Backend | FastAPI · Uvicorn · Pillow/HEIF |
+| Mobile | Flutter · Dart · Android |
+| Evaluation | Dice · IoU · Recall · Top-1 · Top-3 · Macro Recall · provenance audit |
 
 ![잎파라치 시스템 콘셉트](assets/system-concept.png)
 
@@ -76,6 +94,7 @@ SegFormer 수치는 PlantSeg 원본 테스트 기준입니다. 분류기는 best
 ```text
 .
 ├─ README.md
+├─ assets/demo/            # Android 실기기 시연영상과 대표 프레임
 ├─ docs/                 # 설계, 실험, RAG, 회고, 발표용 설명
 ├─ src/
 │  ├─ backend/           # FastAPI 추론·RAG 서버
@@ -85,16 +104,41 @@ SegFormer 수치는 PlantSeg 원본 테스트 기준입니다. 분류기는 best
 └─ assets/               # 포트폴리오 이미지
 ```
 
-## 로컬 실행 개요
+## 로컬 실행
 
-모델 가중치와 RAG 인덱스는 용량 및 배포 권한 때문에 이 저장소에 포함하지 않았습니다. 원본 경로에 산출물이 있는 개발 환경에서는 다음과 같이 서버를 실행했습니다.
+먼저 저장소를 내려받고 백엔드 환경을 준비합니다.
 
-```powershell
-cd E:\plantdoctor\plant_doctor_live_segmentation\server
-E:\EyeGuideRAG\.venv\Scripts\python.exe -m uvicorn app:app --host 0.0.0.0 --port 8001
+```bash
+git clone https://github.com/Engineer3rd-Class-Kimmin/Plant_Doctor.git
+cd Plant_Doctor/src/backend
+python -m venv .venv
 ```
 
-PowerShell 실행 정책 때문에 가상환경 활성화가 막히는 경우에도 위와 같이 가상환경의 `python.exe`를 직접 지정할 수 있습니다. 서버가 준비되면 `GET /health`로 모델과 RAG 인덱스 로딩 상태를 확인합니다.
+Windows PowerShell:
+
+```powershell
+.\.venv\Scripts\python.exe -m pip install -r requirements.txt
+Copy-Item .env.example .env
+.\.venv\Scripts\python.exe -m uvicorn app:app --host 0.0.0.0 --port 8001
+```
+
+macOS/Linux:
+
+```bash
+./.venv/bin/python -m pip install -r requirements.txt
+cp .env.example .env
+./.venv/bin/python -m uvicorn app:app --host 0.0.0.0 --port 8001
+```
+
+`.env`에서 모델 checkpoint와 RAG 인덱스 경로, API 키를 설정한 뒤 실행해야 합니다. 모델 가중치와 RAG 원문·벡터 본체는 용량 및 데이터 배포 조건 때문에 GitHub에 포함하지 않았으므로, 공개 저장소만 복제한 상태에서는 전체 AI 추론을 재현할 수 없습니다. 필요한 파일 구조는 [.env.example](src/backend/.env.example)에서 확인할 수 있습니다.
+
+서버가 준비되면 다음 주소로 로딩 상태를 확인합니다.
+
+```text
+http://127.0.0.1:8001/health
+```
+
+PowerShell 실행 정책으로 `Activate.ps1`이 막히더라도 위 예시처럼 가상환경의 `python.exe`를 직접 호출하면 됩니다.
 
 ## 공개 저장소 주의사항
 
