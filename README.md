@@ -6,7 +6,7 @@
 
 ## 시연 영상
 
-[▶ 약 61초 전체 시연영상 보기 (MP4, 28.3MB)](assets/demo/plant-doctor-demo.mp4)
+[▶ 약 61초 전체 시연영상 바로 보기 (MP4, 28.3MB)](https://raw.githubusercontent.com/Engineer3rd-Class-Kimmin/Plant_Doctor/main/assets/demo/plant-doctor-demo.mp4)
 
 | 앱 실행 | 실시간 촬영 | AI 분석 | 근거 기반 결과 |
 |---|---|---|---|
