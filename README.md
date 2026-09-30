@@ -64,7 +64,6 @@ SegFormer 수치는 PlantSeg 원본 테스트 기준입니다. 분류기는 best
 - [제품 가치와 확장 로드맵](docs/PRODUCT_AND_ROADMAP.md)
 - [데이터·공개 범위·한계](docs/DATA_AND_LIMITATIONS.md)
 - [면접/발표용 질문과 답변](docs/INTERVIEW_QA.md)
-- [GitHub 업로드 전 확인](docs/GITHUB_UPLOAD_GUIDE.md)
 
 ## 앱 화면
 
