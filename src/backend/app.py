@@ -663,11 +663,13 @@ def normalize_label(value: str) -> str:
 
 def label_host(label: str) -> str:
     normalized = normalize_label(label)
-    # Preserve compound crop names used by the trained checkpoint.  Also fold
-    # the dataset's "grapevine" spelling into the application's grape host.
-    if normalized.startswith("bell_pepper_"):
-        return "bell_pepper"
-    if normalized.startswith("grapevine_"):
+    # Match the full compound crop token before taking the first component.
+    # The delimiter check prevents names such as napa_cabbagex from matching.
+    for host in ("bell_pepper", "napa_cabbage", "chinese_cabbage"):
+        if normalized == host or normalized.startswith(host + "_"):
+            return host
+    # Fold the dataset's grapevine spelling into the application's grape host.
+    if normalized == "grapevine" or normalized.startswith("grapevine_"):
         return "grape"
     return normalized.split("_", 1)[0].strip().lower()
 

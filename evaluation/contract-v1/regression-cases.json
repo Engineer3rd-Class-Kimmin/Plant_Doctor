@@ -1,0 +1,107 @@
+[
+  {
+    "id": "PD-R01",
+    "function": "label_host",
+    "input": "napa_cabbage",
+    "expected": "napa_cabbage",
+    "purpose": "복합 작물명·별칭의 전체 이름 및 구분자 경계 회귀"
+  },
+  {
+    "id": "PD-R02",
+    "function": "label_host",
+    "input": "NAPA-CABBAGE-rot_google_123",
+    "expected": "napa_cabbage",
+    "purpose": "복합 작물명·별칭의 전체 이름 및 구분자 경계 회귀"
+  },
+  {
+    "id": "PD-R03",
+    "function": "label_host",
+    "input": "napa_cabbagex_rot",
+    "expected": "napa",
+    "purpose": "복합 작물명·별칭의 전체 이름 및 구분자 경계 회귀"
+  },
+  {
+    "id": "PD-R04",
+    "function": "label_host",
+    "input": "bell_pepper",
+    "expected": "bell_pepper",
+    "purpose": "복합 작물명·별칭의 전체 이름 및 구분자 경계 회귀"
+  },
+  {
+    "id": "PD-R05",
+    "function": "label_host",
+    "input": "BELL-PEPPER-spot_bing_42",
+    "expected": "bell_pepper",
+    "purpose": "복합 작물명·별칭의 전체 이름 및 구분자 경계 회귀"
+  },
+  {
+    "id": "PD-R06",
+    "function": "label_host",
+    "input": "bell_pepperx_spot",
+    "expected": "bell",
+    "purpose": "복합 작물명·별칭의 전체 이름 및 구분자 경계 회귀"
+  },
+  {
+    "id": "PD-R07",
+    "function": "label_host",
+    "input": "chinese_cabbage_rot",
+    "expected": "chinese_cabbage",
+    "purpose": "복합 작물명·별칭의 전체 이름 및 구분자 경계 회귀"
+  },
+  {
+    "id": "PD-R08",
+    "function": "label_host",
+    "input": "chinese_cabbage",
+    "expected": "chinese_cabbage",
+    "purpose": "복합 작물명·별칭의 전체 이름 및 구분자 경계 회귀"
+  },
+  {
+    "id": "PD-R09",
+    "function": "label_host",
+    "input": "chinese_cabbagex_rot",
+    "expected": "chinese",
+    "purpose": "복합 작물명·별칭의 전체 이름 및 구분자 경계 회귀"
+  },
+  {
+    "id": "PD-R10",
+    "function": "label_host",
+    "input": "grapevine",
+    "expected": "grape",
+    "purpose": "복합 작물명·별칭의 전체 이름 및 구분자 경계 회귀"
+  },
+  {
+    "id": "PD-R11",
+    "function": "label_host",
+    "input": "grapevine_rot",
+    "expected": "grape",
+    "purpose": "복합 작물명·별칭의 전체 이름 및 구분자 경계 회귀"
+  },
+  {
+    "id": "PD-R12",
+    "function": "label_host",
+    "input": "grapevinex_rot",
+    "expected": "grapevinex",
+    "purpose": "복합 작물명·별칭의 전체 이름 및 구분자 경계 회귀"
+  },
+  {
+    "id": "PD-R13",
+    "function": "label_host",
+    "input": "cabbage_rot",
+    "expected": "cabbage",
+    "purpose": "복합 작물명·별칭의 전체 이름 및 구분자 경계 회귀"
+  },
+  {
+    "id": "PD-R14",
+    "function": "label_host",
+    "input": "napa_rot",
+    "expected": "napa",
+    "purpose": "복합 작물명·별칭의 전체 이름 및 구분자 경계 회귀"
+  },
+  {
+    "id": "PD-R15",
+    "function": "label_host",
+    "input": "tomato_blight_google_42",
+    "expected": "tomato",
+    "purpose": "복합 작물명·별칭의 전체 이름 및 구분자 경계 회귀"
+  }
+]

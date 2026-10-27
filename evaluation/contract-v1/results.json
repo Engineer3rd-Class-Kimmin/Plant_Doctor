@@ -1,0 +1,438 @@
+{
+  "scope": "source-level pure function contracts, not model/RAG/API/E2E quality",
+  "executed_at": "2026-10-27T04:23:18.318156+00:00",
+  "python": "3.11.9",
+  "source_commit": "0c49b9e8b119931c847c07cbd14c7bc606bc2b14",
+  "hashes": {
+    "src/backend/app.py": "de3f1142f8749287fea72161f70eebe3d43bc54b64b430af5ccaf8bddf4f1de1",
+    "evaluation/contract-v1/cases.json": "c4706431d68ed4451531db38cbd3064ebf6c62c476778a69f343e70ffc3f2a7c",
+    "evaluation/contract-v1/regression-cases.json": "eb3d50d27679f392b0203a535f4af3503edbb4f44a92deb049bdfad819a4abbf",
+    "evaluation/contract-v1/run.py": "e28ed90b77208787e52577d69a20481687c5554e913aa0bdbbb9da6d3d649b5e"
+  },
+  "original_cases_unchanged": true,
+  "total": 38,
+  "passed": 38,
+  "failed": 0,
+  "suites": {
+    "original": {
+      "total": 23,
+      "passed": 23
+    },
+    "regression": {
+      "total": 15,
+      "passed": 15
+    }
+  },
+  "cases": [
+    {
+      "id": "PD-01",
+      "function": "normalize_label",
+      "input": "Tomato-Blight_google_123",
+      "expected": "tomato_blight",
+      "purpose": "라벨 정규화와 데이터 출처 접미사 제거",
+      "suite": "original",
+      "actual": "tomato_blight",
+      "status": "PASS"
+    },
+    {
+      "id": "PD-02",
+      "function": "normalize_label",
+      "input": "apple___scab",
+      "expected": "apple_scab",
+      "purpose": "라벨 정규화와 데이터 출처 접미사 제거",
+      "suite": "original",
+      "actual": "apple_scab",
+      "status": "PASS"
+    },
+    {
+      "id": "PD-03",
+      "function": "normalize_label",
+      "input": "grape_mildew_bing",
+      "expected": "grape_mildew",
+      "purpose": "라벨 정규화와 데이터 출처 접미사 제거",
+      "suite": "original",
+      "actual": "grape_mildew",
+      "status": "PASS"
+    },
+    {
+      "id": "PD-04",
+      "function": "normalize_label",
+      "input": "",
+      "expected": "",
+      "purpose": "라벨 정규화와 데이터 출처 접미사 제거",
+      "suite": "original",
+      "actual": "",
+      "status": "PASS"
+    },
+    {
+      "id": "PD-05",
+      "function": "normalize_label",
+      "input": "Rice_Blast_42",
+      "expected": "rice_blast",
+      "purpose": "라벨 정규화와 데이터 출처 접미사 제거",
+      "suite": "original",
+      "actual": "rice_blast",
+      "status": "PASS"
+    },
+    {
+      "id": "PD-06",
+      "function": "label_host",
+      "input": "bell_pepper_spot",
+      "expected": "bell_pepper",
+      "purpose": "복합 작물명과 포도 별칭 처리",
+      "suite": "original",
+      "actual": "bell_pepper",
+      "status": "PASS"
+    },
+    {
+      "id": "PD-07",
+      "function": "label_host",
+      "input": "grapevine_black_rot",
+      "expected": "grape",
+      "purpose": "복합 작물명과 포도 별칭 처리",
+      "suite": "original",
+      "actual": "grape",
+      "status": "PASS"
+    },
+    {
+      "id": "PD-08",
+      "function": "label_host",
+      "input": "tomato_blight",
+      "expected": "tomato",
+      "purpose": "복합 작물명과 포도 별칭 처리",
+      "suite": "original",
+      "actual": "tomato",
+      "status": "PASS"
+    },
+    {
+      "id": "PD-09",
+      "function": "label_host",
+      "input": "napa_cabbage_rot",
+      "expected": "napa_cabbage",
+      "purpose": "복합 작물명과 포도 별칭 처리",
+      "suite": "original",
+      "actual": "napa_cabbage",
+      "status": "PASS"
+    },
+    {
+      "id": "PD-10",
+      "function": "label_host",
+      "input": "",
+      "expected": "",
+      "purpose": "복합 작물명과 포도 별칭 처리",
+      "suite": "original",
+      "actual": "",
+      "status": "PASS"
+    },
+    {
+      "id": "PD-11",
+      "function": "_extract_json",
+      "input": "{\"a\":1}",
+      "expected": {
+        "a": 1
+      },
+      "purpose": "정상·잘못된·모호한 JSON 응답 처리",
+      "suite": "original",
+      "actual": {
+        "a": 1
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "PD-12",
+      "function": "_extract_json",
+      "input": "```json\n{\"a\":1}\n```",
+      "expected": {
+        "a": 1
+      },
+      "purpose": "정상·잘못된·모호한 JSON 응답 처리",
+      "suite": "original",
+      "actual": {
+        "a": 1
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "PD-13",
+      "function": "_extract_json",
+      "input": "prefix {\"a\":1} suffix",
+      "expected": {
+        "a": 1
+      },
+      "purpose": "정상·잘못된·모호한 JSON 응답 처리",
+      "suite": "original",
+      "actual": {
+        "a": 1
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "PD-14",
+      "function": "_extract_json",
+      "input": "",
+      "expected": {},
+      "purpose": "정상·잘못된·모호한 JSON 응답 처리",
+      "suite": "original",
+      "actual": {},
+      "status": "PASS"
+    },
+    {
+      "id": "PD-15",
+      "function": "_extract_json",
+      "input": "[]",
+      "expected": {},
+      "purpose": "정상·잘못된·모호한 JSON 응답 처리",
+      "suite": "original",
+      "actual": {},
+      "status": "PASS"
+    },
+    {
+      "id": "PD-16",
+      "function": "_extract_json",
+      "input": "{broken}",
+      "expected": {},
+      "purpose": "정상·잘못된·모호한 JSON 응답 처리",
+      "suite": "original",
+      "actual": {},
+      "status": "PASS"
+    },
+    {
+      "id": "PD-17",
+      "function": "_extract_json",
+      "input": "null",
+      "expected": {},
+      "purpose": "정상·잘못된·모호한 JSON 응답 처리",
+      "suite": "original",
+      "actual": {},
+      "status": "PASS"
+    },
+    {
+      "id": "PD-18",
+      "function": "_extract_json",
+      "input": "true",
+      "expected": {},
+      "purpose": "정상·잘못된·모호한 JSON 응답 처리",
+      "suite": "original",
+      "actual": {},
+      "status": "PASS"
+    },
+    {
+      "id": "PD-19",
+      "function": "_extract_json",
+      "input": "{\"a\":1}{\"b\":2}",
+      "expected": {},
+      "purpose": "정상·잘못된·모호한 JSON 응답 처리",
+      "suite": "original",
+      "actual": {},
+      "status": "PASS"
+    },
+    {
+      "id": "PD-20",
+      "function": "_string_values",
+      "input": null,
+      "expected": [],
+      "purpose": "근거 필드의 빈 값과 자료형 처리",
+      "suite": "original",
+      "actual": [],
+      "status": "PASS"
+    },
+    {
+      "id": "PD-21",
+      "function": "_string_values",
+      "input": "symptom",
+      "expected": [
+        "symptom"
+      ],
+      "purpose": "근거 필드의 빈 값과 자료형 처리",
+      "suite": "original",
+      "actual": [
+        "symptom"
+      ],
+      "status": "PASS"
+    },
+    {
+      "id": "PD-22",
+      "function": "_string_values",
+      "input": [
+        "a",
+        "",
+        "b"
+      ],
+      "expected": [
+        "a",
+        "b"
+      ],
+      "purpose": "근거 필드의 빈 값과 자료형 처리",
+      "suite": "original",
+      "actual": [
+        "a",
+        "b"
+      ],
+      "status": "PASS"
+    },
+    {
+      "id": "PD-23",
+      "function": "_string_values",
+      "input": 0,
+      "expected": [
+        "0"
+      ],
+      "purpose": "근거 필드의 빈 값과 자료형 처리",
+      "suite": "original",
+      "actual": [
+        "0"
+      ],
+      "status": "PASS"
+    },
+    {
+      "id": "PD-R01",
+      "function": "label_host",
+      "input": "napa_cabbage",
+      "expected": "napa_cabbage",
+      "purpose": "복합 작물명·별칭의 전체 이름 및 구분자 경계 회귀",
+      "suite": "regression",
+      "actual": "napa_cabbage",
+      "status": "PASS"
+    },
+    {
+      "id": "PD-R02",
+      "function": "label_host",
+      "input": "NAPA-CABBAGE-rot_google_123",
+      "expected": "napa_cabbage",
+      "purpose": "복합 작물명·별칭의 전체 이름 및 구분자 경계 회귀",
+      "suite": "regression",
+      "actual": "napa_cabbage",
+      "status": "PASS"
+    },
+    {
+      "id": "PD-R03",
+      "function": "label_host",
+      "input": "napa_cabbagex_rot",
+      "expected": "napa",
+      "purpose": "복합 작물명·별칭의 전체 이름 및 구분자 경계 회귀",
+      "suite": "regression",
+      "actual": "napa",
+      "status": "PASS"
+    },
+    {
+      "id": "PD-R04",
+      "function": "label_host",
+      "input": "bell_pepper",
+      "expected": "bell_pepper",
+      "purpose": "복합 작물명·별칭의 전체 이름 및 구분자 경계 회귀",
+      "suite": "regression",
+      "actual": "bell_pepper",
+      "status": "PASS"
+    },
+    {
+      "id": "PD-R05",
+      "function": "label_host",
+      "input": "BELL-PEPPER-spot_bing_42",
+      "expected": "bell_pepper",
+      "purpose": "복합 작물명·별칭의 전체 이름 및 구분자 경계 회귀",
+      "suite": "regression",
+      "actual": "bell_pepper",
+      "status": "PASS"
+    },
+    {
+      "id": "PD-R06",
+      "function": "label_host",
+      "input": "bell_pepperx_spot",
+      "expected": "bell",
+      "purpose": "복합 작물명·별칭의 전체 이름 및 구분자 경계 회귀",
+      "suite": "regression",
+      "actual": "bell",
+      "status": "PASS"
+    },
+    {
+      "id": "PD-R07",
+      "function": "label_host",
+      "input": "chinese_cabbage_rot",
+      "expected": "chinese_cabbage",
+      "purpose": "복합 작물명·별칭의 전체 이름 및 구분자 경계 회귀",
+      "suite": "regression",
+      "actual": "chinese_cabbage",
+      "status": "PASS"
+    },
+    {
+      "id": "PD-R08",
+      "function": "label_host",
+      "input": "chinese_cabbage",
+      "expected": "chinese_cabbage",
+      "purpose": "복합 작물명·별칭의 전체 이름 및 구분자 경계 회귀",
+      "suite": "regression",
+      "actual": "chinese_cabbage",
+      "status": "PASS"
+    },
+    {
+      "id": "PD-R09",
+      "function": "label_host",
+      "input": "chinese_cabbagex_rot",
+      "expected": "chinese",
+      "purpose": "복합 작물명·별칭의 전체 이름 및 구분자 경계 회귀",
+      "suite": "regression",
+      "actual": "chinese",
+      "status": "PASS"
+    },
+    {
+      "id": "PD-R10",
+      "function": "label_host",
+      "input": "grapevine",
+      "expected": "grape",
+      "purpose": "복합 작물명·별칭의 전체 이름 및 구분자 경계 회귀",
+      "suite": "regression",
+      "actual": "grape",
+      "status": "PASS"
+    },
+    {
+      "id": "PD-R11",
+      "function": "label_host",
+      "input": "grapevine_rot",
+      "expected": "grape",
+      "purpose": "복합 작물명·별칭의 전체 이름 및 구분자 경계 회귀",
+      "suite": "regression",
+      "actual": "grape",
+      "status": "PASS"
+    },
+    {
+      "id": "PD-R12",
+      "function": "label_host",
+      "input": "grapevinex_rot",
+      "expected": "grapevinex",
+      "purpose": "복합 작물명·별칭의 전체 이름 및 구분자 경계 회귀",
+      "suite": "regression",
+      "actual": "grapevinex",
+      "status": "PASS"
+    },
+    {
+      "id": "PD-R13",
+      "function": "label_host",
+      "input": "cabbage_rot",
+      "expected": "cabbage",
+      "purpose": "복합 작물명·별칭의 전체 이름 및 구분자 경계 회귀",
+      "suite": "regression",
+      "actual": "cabbage",
+      "status": "PASS"
+    },
+    {
+      "id": "PD-R14",
+      "function": "label_host",
+      "input": "napa_rot",
+      "expected": "napa",
+      "purpose": "복합 작물명·별칭의 전체 이름 및 구분자 경계 회귀",
+      "suite": "regression",
+      "actual": "napa",
+      "status": "PASS"
+    },
+    {
+      "id": "PD-R15",
+      "function": "label_host",
+      "input": "tomato_blight_google_42",
+      "expected": "tomato",
+      "purpose": "복합 작물명·별칭의 전체 이름 및 구분자 경계 회귀",
+      "suite": "regression",
+      "actual": "tomato",
+      "status": "PASS"
+    }
+  ]
+}
