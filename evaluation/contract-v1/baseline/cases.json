@@ -1,0 +1,180 @@
+[
+  {
+    "id": "PD-01",
+    "function": "normalize_label",
+    "input": "Tomato-Blight_google_123",
+    "expected": "tomato_blight",
+    "purpose": "라벨 정규화와 데이터 출처 접미사 제거"
+  },
+  {
+    "id": "PD-02",
+    "function": "normalize_label",
+    "input": "apple___scab",
+    "expected": "apple_scab",
+    "purpose": "라벨 정규화와 데이터 출처 접미사 제거"
+  },
+  {
+    "id": "PD-03",
+    "function": "normalize_label",
+    "input": "grape_mildew_bing",
+    "expected": "grape_mildew",
+    "purpose": "라벨 정규화와 데이터 출처 접미사 제거"
+  },
+  {
+    "id": "PD-04",
+    "function": "normalize_label",
+    "input": "",
+    "expected": "",
+    "purpose": "라벨 정규화와 데이터 출처 접미사 제거"
+  },
+  {
+    "id": "PD-05",
+    "function": "normalize_label",
+    "input": "Rice_Blast_42",
+    "expected": "rice_blast",
+    "purpose": "라벨 정규화와 데이터 출처 접미사 제거"
+  },
+  {
+    "id": "PD-06",
+    "function": "label_host",
+    "input": "bell_pepper_spot",
+    "expected": "bell_pepper",
+    "purpose": "복합 작물명과 포도 별칭 처리"
+  },
+  {
+    "id": "PD-07",
+    "function": "label_host",
+    "input": "grapevine_black_rot",
+    "expected": "grape",
+    "purpose": "복합 작물명과 포도 별칭 처리"
+  },
+  {
+    "id": "PD-08",
+    "function": "label_host",
+    "input": "tomato_blight",
+    "expected": "tomato",
+    "purpose": "복합 작물명과 포도 별칭 처리"
+  },
+  {
+    "id": "PD-09",
+    "function": "label_host",
+    "input": "napa_cabbage_rot",
+    "expected": "napa_cabbage",
+    "purpose": "복합 작물명과 포도 별칭 처리"
+  },
+  {
+    "id": "PD-10",
+    "function": "label_host",
+    "input": "",
+    "expected": "",
+    "purpose": "복합 작물명과 포도 별칭 처리"
+  },
+  {
+    "id": "PD-11",
+    "function": "_extract_json",
+    "input": "{\"a\":1}",
+    "expected": {
+      "a": 1
+    },
+    "purpose": "정상·잘못된·모호한 JSON 응답 처리"
+  },
+  {
+    "id": "PD-12",
+    "function": "_extract_json",
+    "input": "```json\n{\"a\":1}\n```",
+    "expected": {
+      "a": 1
+    },
+    "purpose": "정상·잘못된·모호한 JSON 응답 처리"
+  },
+  {
+    "id": "PD-13",
+    "function": "_extract_json",
+    "input": "prefix {\"a\":1} suffix",
+    "expected": {
+      "a": 1
+    },
+    "purpose": "정상·잘못된·모호한 JSON 응답 처리"
+  },
+  {
+    "id": "PD-14",
+    "function": "_extract_json",
+    "input": "",
+    "expected": {},
+    "purpose": "정상·잘못된·모호한 JSON 응답 처리"
+  },
+  {
+    "id": "PD-15",
+    "function": "_extract_json",
+    "input": "[]",
+    "expected": {},
+    "purpose": "정상·잘못된·모호한 JSON 응답 처리"
+  },
+  {
+    "id": "PD-16",
+    "function": "_extract_json",
+    "input": "{broken}",
+    "expected": {},
+    "purpose": "정상·잘못된·모호한 JSON 응답 처리"
+  },
+  {
+    "id": "PD-17",
+    "function": "_extract_json",
+    "input": "null",
+    "expected": {},
+    "purpose": "정상·잘못된·모호한 JSON 응답 처리"
+  },
+  {
+    "id": "PD-18",
+    "function": "_extract_json",
+    "input": "true",
+    "expected": {},
+    "purpose": "정상·잘못된·모호한 JSON 응답 처리"
+  },
+  {
+    "id": "PD-19",
+    "function": "_extract_json",
+    "input": "{\"a\":1}{\"b\":2}",
+    "expected": {},
+    "purpose": "정상·잘못된·모호한 JSON 응답 처리"
+  },
+  {
+    "id": "PD-20",
+    "function": "_string_values",
+    "input": null,
+    "expected": [],
+    "purpose": "근거 필드의 빈 값과 자료형 처리"
+  },
+  {
+    "id": "PD-21",
+    "function": "_string_values",
+    "input": "symptom",
+    "expected": [
+      "symptom"
+    ],
+    "purpose": "근거 필드의 빈 값과 자료형 처리"
+  },
+  {
+    "id": "PD-22",
+    "function": "_string_values",
+    "input": [
+      "a",
+      "",
+      "b"
+    ],
+    "expected": [
+      "a",
+      "b"
+    ],
+    "purpose": "근거 필드의 빈 값과 자료형 처리"
+  },
+  {
+    "id": "PD-23",
+    "function": "_string_values",
+    "input": 0,
+    "expected": [
+      "0"
+    ],
+    "purpose": "근거 필드의 빈 값과 자료형 처리"
+  }
+]

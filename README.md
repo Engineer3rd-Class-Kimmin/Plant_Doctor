@@ -1,6 +1,6 @@
 # 잎파라치 — AI 식물 질병 진단 시스템
 
-문제·개인 기여·AI 활용과 검증 범위는 [지원용 프로젝트 설명](docs/APPLICATION_PORTFOLIO.md)에 정리했습니다. 신규 공개 코드 계약 평가는 **23건 중 22건 통과, 1건 실패**이며 [입력별 결과와 재현 방법](evaluation/contract-v1/RESULTS.md)을 공개합니다. 기존 모델 정확도와는 별도 평가입니다.
+문제·개인 기여·AI 활용과 검증 범위는 [지원용 프로젝트 설명](docs/APPLICATION_PORTFOLIO.md)에 정리했습니다. 신규 공개 코드 계약 평가는 **기존 23/23·추가 회귀 15/15, 총 38/38 통과**이며 [입력별 결과와 재현 방법](evaluation/contract-v1/RESULTS.md)을 공개합니다. 기존 모델 정확도와는 별도 평가입니다.
 
 
 > 컴퓨터 비전 기반 식물 질병 진단부터 RAG 기반 설명 생성, FastAPI 추론 서버, Flutter 모바일 앱까지 직접 구축한 End-to-End AI 서비스 프로젝트
