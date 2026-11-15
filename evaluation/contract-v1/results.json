@@ -1,13 +1,13 @@
 {
   "scope": "source-level pure function contracts, not model/RAG/API/E2E quality",
-  "executed_at": "2026-10-27T04:23:18.318156+00:00",
+  "executed_at": "2026-11-15T11:58:09.542999+00:00",
   "python": "3.11.9",
-  "source_commit": "0c49b9e8b119931c847c07cbd14c7bc606bc2b14",
+  "source_commit": "054dd82e967ec622325d26069d66da776ffa57e8",
   "hashes": {
-    "src/backend/app.py": "de3f1142f8749287fea72161f70eebe3d43bc54b64b430af5ccaf8bddf4f1de1",
-    "evaluation/contract-v1/cases.json": "c4706431d68ed4451531db38cbd3064ebf6c62c476778a69f343e70ffc3f2a7c",
-    "evaluation/contract-v1/regression-cases.json": "eb3d50d27679f392b0203a535f4af3503edbb4f44a92deb049bdfad819a4abbf",
-    "evaluation/contract-v1/run.py": "e28ed90b77208787e52577d69a20481687c5554e913aa0bdbbb9da6d3d649b5e"
+    "src/backend/app.py": "78f9de656361e061d870ae7ae58a97d81bd9c5c3d40badeca095bcf8d395e75d",
+    "evaluation/contract-v1/cases.json": "0898960be7e6a1d610e0dfdebc0d03c020c692c2a6c6f6cecd1aa4111b9eb81f",
+    "evaluation/contract-v1/regression-cases.json": "876af3964187921d362e9c1980f365ce1941ffe5ac5fe17aca27dda4fead25f9",
+    "evaluation/contract-v1/run.py": "ee3b884507d2714abb8628aaf893bb080b900a5e2545c9de6dd9bb1ab5d77d82"
   },
   "original_cases_unchanged": true,
   "total": 38,
